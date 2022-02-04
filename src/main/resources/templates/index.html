@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet" href="../static/css/bootstrap.css" />
+
+	<script th:href="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+	<script th:href="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+
+	<title>Principal</title>
+
+
+</head>
+
+<body>
+	<!-- barra de navegacion-->
+	<nav style="color:white" class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">IMG</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-item nav-link active" th:href="@{/}">Home <span
+						class="sr-only">(current)</span></a>
+				<a class="nav-item nav-link" th:href="@{/}">Galeria</a>
+				<a class="nav-item nav-link" th:href="@{/home/postNew/}">Post</a>
+
+			</div>
+		</div>
+	</nav>
+	<!-- presentacion-->
+	<div class="jumbotron">
+		<h1 class="display-4">Practica de trabajo</h1>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+			featured content or information.</p>
+		<hr class="my-4">
+		<p>Nuevos diseños de fotografia.</p>
+		<a class="btn btn-primary btn-lg" th:href="@{/home/}" role="button">Learn more</a>
+	</div>
+	<!-- tarjetas de prsentacion-->
+	<div class="container">
+		<div class="row">
+
+			<div th:each="post : ${posts}" class="col-3">
+				<div class="card" style="width: 18rem;">
+					<img th:src="${post.urlImag}" class="card-img-top" src="../static/img/2396.jpg"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 th:text="${post.titulo}"></h5>
+						<p th:text="${post.descripcion}" class="card-text" Nuevo Proyecto de trabajo.></p>
+						<a th:href="@{/home/post?id=} + ${post.id}"  class="btn btn-primary btn-lg" href="#" role="button">Ver mas</a>
+					</div>
+				</div>
+				
+				
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<nav aria-label="Page navigation example">
+						<ul class="pagination justify-content-center">
+							<li class="page-item">
+								<a class="page-link" href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+									<span class="sr-only">Previous</span>
+								</a>
+							</li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item">
+								<a class="page-link" href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+									<span class="sr-only">Next</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<footer>
+		<p>Inicio de proyecto</p>
+	</footer>
+</body>
+
+</html>

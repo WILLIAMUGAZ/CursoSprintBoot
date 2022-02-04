@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet" href="../static/css/bootstrap.css" />
+
+	<script th:href="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+	<script th:href="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+
+	<title>Principal</title>
+
+
+</head>
+
+<body>
+	<!-- barra de navegacion-->
+	<nav style="color:white" class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a  class="navbar-brand" th:href="@{/home/}">IMG</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-item nav-link active" th:href="@{/home/}">Home <span
+						class="sr-only">(current)</span></a>
+				<a class="nav-item nav-link" th:href="@{/home/}">Galeria</a>
+				<a class="nav-item nav-link" th:href="@{/home/postNew}">Post</a>
+
+			</div>
+		</div>
+	</nav>
+	<!-- presentacion-->
+	<div class="jumbotron">
+		<h1 th:text="${post.titulo}" class="display-4">Hello, world!</h1>
+		<p th:text="${post.descripcion}" class="lead">This is a simple hero unit, a simple jumbotron-style component for
+			calling extra attention to
+			featured content or information.</p>
+		<hr class="my-4">
+		<p th:text="${post.fecha}">Nuevos diseños de fotografia.</p>
+		<a class="btn btn-primary btn-lg" href="/home/" role="button">Seguir revisando</a>
+
+	</div>
+
+	<footer>
+		<p>Pagina Post pagina de prueba</p>
+	</footer>
+</body>
+
+</html>
